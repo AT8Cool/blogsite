@@ -1,0 +1,35 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environment
+venv/
+.venv/
+
+# IDE settings
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Environment variables
+.env
+
+# MySQL or SQLite local db (optional)
+*.db
+
+# Log files
+*.log
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env/
+venv/
+instance/
+.env
+*.db
+*.sqlite3
+.DS_Store

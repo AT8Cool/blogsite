@@ -1,0 +1,183 @@
+body {
+            background-color: #3674B5;
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #03A6A1;
+            padding: 15px 0;
+            border: none;
+        }
+
+        h1 {
+            color: #FFE3BB;
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .general-button {
+            border: none;
+            border-radius: 25px;
+            background-color: #03A6A1;
+            color: #FFE3BB;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .general-button:hover {
+            background-color: #FFE3BB;
+            color: #03A6A1;
+        }
+
+        a {
+            text-decoration: none;
+            color: #FFE3BB;
+        }
+/*POST WRITING PAGE CSS*/
+        .create-post-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 80px);
+            padding: 20px;
+        }
+
+        .create-post-container form {
+            background-color: #FFE3BB;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .create-post-container input,
+        .create-post-container textarea {
+            padding: 15px;
+            font-size: 1.2rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-family: 'Courier New', Courier, monospace;
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+
+        .create-post-container textarea {
+            resize: vertical;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .input-label {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #03A6A1;
+            margin-bottom: 10px;
+            text-align: center;
+            display: block;
+        }
+
+        .create-post-container button {
+            margin-top: 20px;
+            color: #FFE3BB;
+            background-color: #03A6A1;
+            font-family: 'Courier New', Courier, monospace;
+            border: none;
+            border-radius: 8px;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            padding: 14px 28px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .create-post-container button:hover {
+            background-color: #2d8a86;
+            transform: translateY(-2px);
+        }
+
+        /* Post display styles */
+        .post-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .post {
+            background-color: #fefefe;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .post h2 {
+            color: #03A6A1;
+            margin-bottom: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .post p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .post hr {
+            margin-top: 15px;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Sign up container styles */
+        .sign-up-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sign-up-container input {
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .create-post-container form {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .create-post-container input,
+            .create-post-container textarea {
+                font-size: 1rem;
+            }
+            
+            .input-label {
+                font-size: 1.2rem;
+            }
+        }

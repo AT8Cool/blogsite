@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" charset="UTF-8">
+    <title> website</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+        <nav class="navbar">
+                <h1><a href="{{ url_for('index')}}">Website</a></h1>
+                {% if 'username' in session %}
+                        <h3  class="login-button general-button">{{ session['username'] }} </h3>
+                        <button id="logout" class="general-button">Logout</button>
+                        <button id="Create_POST" class="general-button">Create a post</button>
+                {% else %}
+                        <button id="Login_verify" class="login-button general-button"> Login </button>
+                        <button id="sign_up_verify" class="login-button general-button"> Sign_Up </button>
+                {% endif %}
+                
+                
+                
+        </nav>
+
+        <div class="post-container">
+                
+                {% for post in posts %}
+                        <div class="post" >
+                                <h2>{{ post.title }}</h2>
+                                <p>{{ post.content }}</p>
+                                <hr>
+                        </div>
+                        {% else %}
+                                <p>No posts yet.</p>
+                {% endfor %}
+        </div>
+</body>
+</html>
+<script>
+
+       const poster = document.getElementById("Create_POST");
+if (poster) {
+    poster.addEventListener('click', () => {
+        fetch('{{ url_for("create_post") }}', { method: 'POST' })
+            .then(response => response.text())
+            .then(html => {
+                document.body.innerHTML = html;
+            });
+    });
+}
+
+const loginer = document.getElementById("Login_verify");
+if (loginer) {
+    loginer.addEventListener('click', () => {
+        fetch('{{ url_for("login") }}', { method: 'GET' }) // changed to GET for login form
+            .then(response => response.text())
+            .then(html => {
+                document.body.innerHTML = html;
+            });
+    });
+}
+
+const signer = document.getElementById("sign_up_verify");
+if (signer) {
+    signer.addEventListener('click', () => {
+        fetch('{{ url_for("signup")}}', { method: 'GET' })
+            .then(response => response.text())
+            .then(html => {
+                document.body.innerHTML = html;
+            });
+    });
+}
+
+const logouter = document.getElementById("logout");
+if(logouter){
+    logouter.addEventListener('click',() =>{
+        fetch('{{ url_for("logout") }}',{method:'GET'})
+            .then(response => response.text())
+            .then(html =>{
+                document.body.innerHTML =html;
+            })
+        
+    })
+}
+
+</script>

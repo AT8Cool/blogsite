@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Post</title>
+     <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1><a href="/">Website</a></h1>
+    </nav>
+
+    <div class="create-post-container">
+        <form action="{{url_for('add_new_post')}}" method="POST">
+            <label for="text" class="input-label">Give In Your Title for the Post...</label>
+            <textarea name="title-area" id="text" rows="3" placeholder="Enter post title" required></textarea>
+            <textarea name="Content" rows="10" class="text-area-content" placeholder="Now write your post Here" required></textarea>
+            <button type="submit">POST-IT</button>
+        </form>
+    </div>
+</body>
+</html>
+
+</html>

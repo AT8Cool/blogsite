@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+
+  <!-- Pull in the same stylesheet you used for signup -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+</head>
+<body>
+
+  <!-- Top-bar -->
+  <nav class="navbar">
+    <h1><a href="/">Website</a></h1>
+  </nav>
+
+  <!-- Login form -->
+  <form action="{{ url_for('login') }}" method="POST">
+     {{ form.hidden_tag() }}
+    {{ form.username.label }} {{ form.username() }}<br>
+    {{ form.password.label }} {{ form.password() }}<br>
+    {{ form.submit() }}
+    </div>
+  </form>
+
+</body>
+</html>
