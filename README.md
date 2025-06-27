@@ -35,14 +35,12 @@ A minimalistic blog application built with **Flask**, **MySQL**, and **WTForms**
 blogsite/
 ├── static/                  # CSS, JS, and images
 ├── templates/               # HTML templates (Jinja2)
-│   ├── base.html
+│   ├── create_post.html
 │   ├── index.html
 │   ├── login.html
-│   ├── register.html
-│   └── dashboard.html
-├── app.py                   # Main Flask application
-├── models.py                # Database models
-├── forms.py                 # WTForms for login/register
+│   ├── signup.html
+│   
+├── app.py                   # Main Flask applicationms for login/register
 ├── requirements.txt         # Python dependencies
 └── README.md                # Project documentation
 ```
