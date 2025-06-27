@@ -1,40 +1,52 @@
-📝 BlogSite
-
-A simple and functional blog web application built using Flask, SQLAlchemy, and WTForms. It allows users to register, log in, and create, view, and manage blog posts in a clean and user-friendly interface.
-
-🚀 Features
-
-🔐 User Authentication (Register/Login/Logout)
-
-🖋️ Create, Edit, and Delete Blog Posts
-
-📜 View All Posts with Timestamps
-
-🧠 Form Validation using Flask-WTF
-
-📁 MySQL Integration with SQLAlchemy ORM
-
-🧼 Clean UI with Jinja2 Templates
 
 
-🛠️ Tech Stack
+```
+# 📝 BlogSite
 
-Backend: Python, Flask
+![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
+![Flask](https://img.shields.io/badge/Flask-2.x-lightgrey?logo=flask)
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
 
-Frontend: HTML, CSS, Bootstrap, Jinja2
+A minimalistic blog application built with **Flask**, **MySQL**, and **WTForms**. Users can register, log in, and publish blog posts with ease.
 
-Database: MySQL
+---
 
-ORM: SQLAlchemy
+## 📸 Screenshots
 
-Forms: Flask-WTF
+| Home Page | Login | Dashboard |
+|----------|-------|-----------|
+| ![Home](static/screenshots/home.png) | ![Login](static/screenshots/login.png) | ![Dashboard](static/screenshots/dashboard.png) |
 
+---
 
-📁 Folder Structure
+## ⚙️ Features
+
+- 🔐 User Authentication (Register/Login/Logout)
+- 🖋️ Create, Edit, and Delete Posts
+- 🧼 Form Validation (Flask-WTF)
+- 📁 MySQL Integration via SQLAlchemy
+- 🧩 Modular Template Structure with Jinja2
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer     | Technology              |
+|-----------|--------------------------|
+| Backend   | Flask, SQLAlchemy        |
+| Frontend  | HTML5, CSS3, Bootstrap   |
+| Forms     | Flask-WTF, WTForms       |
+| Database  | MySQL                    |
+
+---
+
+## 🗂️ Project Structure
+
+```
 
 blogsite/
 │
-├── static/              # CSS, JS, and images
+├── static/              # CSS, JS, images
 ├── templates/           # HTML templates (Jinja2)
 │   ├── base.html
 │   ├── index.html
@@ -42,75 +54,92 @@ blogsite/
 │   ├── register.html
 │   └── dashboard.html
 │
-├── app.py               # Main Flask application
-├── models.py            # Database models
-├── forms.py             # WTForms for login/register
+├── app.py               # Main Flask app
+├── models.py            # SQLAlchemy models
+├── forms.py             # WTForms classes
 ├── requirements.txt     # Python dependencies
-└── README.md            # Project documentation
+└── README.md            # This file
 
-🔧 Setup Instructions
-
-1. Clone the repo:
-
-
-
-git clone https://github.com/AT8Cool/blogsite.git
-cd blogsite
-
-2. Create and activate a virtual environment:
-
-
-
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-3. Install dependencies:
-
-
-
-pip install -r requirements.txt
-
-4. Configure your MySQL database:
-
-
-
-Update the app.config['SQLALCHEMY_DATABASE_URI'] in app.py:
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/dbname'
-
-5. Run the app:
-
-
-
-python app.py
-
-Visit http://127.0.0.1:5000 in your browser.
-
-📸 Screenshots
-
-(Will Update in the next commit)
-
-📚 Things I would want to add
-
-Add support for image uploads
-
-Markdown support for posts
-
-Password encryption with hashing
-
-Pagination for posts
-
-
-🤝 Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
-
-📄 License
-
-This project is licensed under the MIT License.
-
+````
 
 ---
 
-Let me know if you'd like to add deployment instructions (e.g., on Heroku or Render) or a requirements.txt file generator.
+## 🚀 Setup & Run Locally
 
+### 🔧 Prerequisites
+
+- Python 3.8+
+- MySQL
+- Virtualenv (optional but recommended)
+
+### 💻 Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/AT8Cool/blogsite.git
+cd blogsite
+
+# Set up virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+````
+
+### 🛠️ Configure Database
+
+Edit `app.py`:
+
+```python
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/dbname'
+```
+
+### ▶️ Run the App
+
+```bash
+python app.py
+```
+
+Open your browser and go to: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+
+---
+
+## 📌 To-Do / Roadmap
+
+* [ ] Add Markdown support for blog posts
+* [ ] Improve UI with a theme or dark mode
+* [ ] Add profile pictures and user bios
+* [ ] Add search and pagination
+* [ ] Hash passwords with `werkzeug.security`
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🤝 Contributing
+
+Have suggestions or improvements? Feel free to:
+
+* Fork the repo
+* Create a new branch
+* Submit a pull request
+
+---
+
+## 💬 Contact
+
+**Atharva Bhosale**
+📧 [at8cool@gmail.com](mailto:at8cool@gmail.com)
+🌐 [GitHub](https://github.com/AT8Cool)
+
+---
+
+```
+
+---
+Updated README with detailed markdown layout
