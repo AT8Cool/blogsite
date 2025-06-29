@@ -1,28 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login</title>
+{% extends 'base.html'  %}
 
-  <!-- Pull in the same stylesheet you used for signup -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
-</head>
-<body>
+{% block title %} Login {% endblock %}
+  
+{% block addon_nav %}
+        <div class="nav-right">
+            <a href="{{ url_for('signup') }}" class="general-button">Sign_Up</a>
+        </div>
+{% endblock %}
 
-  <!-- Top-bar -->
-  <nav class="navbar">
-    <h1><a href="/">Website</a></h1>
-  </nav>
-
+{% block content %}
   <!-- Login form -->
-  <form action="{{ url_for('login') }}" method="POST">
+  <div class="form-wrapper">
+  <form action="{{ url_for('login') }}" method="POST" class="login-page-form">
+
      {{ form.hidden_tag() }}
-    {{ form.username.label }} {{ form.username() }}<br>
+    {{ form.username.label }} {{ form.username() }}
+    
+    <br>
+
     {{ form.password.label }} {{ form.password() }}<br>
     {{ form.submit() }}
-    </div>
+    
   </form>
+</div>
+{% endblock %}
 
-</body>
-</html>
+

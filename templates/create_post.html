@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a Post</title>
-     <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <nav class="navbar">
-        <h1><a href="/">Website</a></h1>
-    </nav>
+{% extends 'base.html' %}
 
-    <div class="create-post-container">
+{% block title %}POST-IT{% endblock %}
+
+{% block addon_nav %}
+    <h3  class="general-button">{{ session['username'] }} </h3>
+{% endblock %}
+
+
+{% block content %}
+
+       <div class="create-post-container">
         <form action="{{url_for('add_new_post')}}" method="POST">
             <label for="text" class="input-label">Give In Your Title for the Post...</label>
             <textarea name="title-area" id="text" rows="3" placeholder="Enter post title" required></textarea>
@@ -19,6 +17,14 @@
             <button type="submit">POST-IT</button>
         </form>
     </div>
+    
+{% endblock %}
+
+
+
+
+
+ 
 </body>
 </html>
 

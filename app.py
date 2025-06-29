@@ -3,18 +3,19 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField,PasswordField
 from wtforms.validators import DataRequired
+from flask_bcrypt import Bcrypt
 
 
 app = Flask(__name__,template_folder='templates',static_folder='static',static_url_path='/')
 
 #Configure MySQL database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:yourpassword@localhost/blogsite'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://username:password@localhost/blogsite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 #WTForms secret key
 app.config['SECRET_KEY']= 'hello'
 #Initializa the DB object
 db = SQLAlchemy(app)
-
+bcrypt = Bcrypt(app)
 #Define BlogPost
 class BlogPost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -22,11 +23,11 @@ class BlogPost(db.Model):
     content = db.Column(db.Text, nullable=False)
     author = db.Column(db.String(100), nullable=False)
 
-#Login
+#Define User_data
 class User_data(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     username = db.Column(db.String(150),nullable=False,unique=True)
-    password = db.Column(db.String(8),nullable = False)
+    password = db.Column(db.String(100),nullable = False)
 
 #Create a Form Class
 class LoginForm(FlaskForm):
@@ -72,7 +73,7 @@ def login():
     if form.validate_on_submit():
         username = form.username.data
         user = User_data.query.filter_by(username=username).first()
-        if user:
+        if user and bcrypt.check_password_hash(user.password,form.password.data):
             session['username'] = user.username 
             return redirect(url_for('index'))
         else:
@@ -93,8 +94,8 @@ def signup():
            
             if  existing_user:
                 return "User name already exist",409
-            
-            new_user = User_data(username=username,password=password)
+            hashed_pass = bcrypt.generate_password_hash(password)
+            new_user = User_data(username=username,password=hashed_pass)
             db.session.add(new_user)
             db.session.commit()
             return redirect(url_for('index'))

@@ -1,0 +1,29 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Blog-it{% endblock %}</title>
+    <link rel="stylesheet" href="index.css">
+    {% block extra_head %} {% endblock %}
+</head>
+<body>
+
+    <!-- Navbar (shared by all pages) -->
+    <div class="navbar">
+        <div class="nav-left">
+            <h1><a href="{{ url_for('index') }}">Blog-it</a></h1>
+        </div>
+        {% block addon_nav %}
+        {% endblock %}
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>
