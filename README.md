@@ -39,7 +39,7 @@ blogsite/
 │   ├── index.html
 │   ├── login.html
 │   ├── signup.html
-│   
+│ 
 ├── app.py                   # Main Flask applicationms for login/register
 ├── requirements.txt         # Python dependencies
 └── README.md                # Project documentation
