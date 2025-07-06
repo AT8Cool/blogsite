@@ -298,17 +298,105 @@ h1{
 
         /* Responsive design */
         @media (max-width: 768px) {
-            .create-post-container form {
-                padding: 20px;
-                margin: 10px;
-            }
-            
-            .create-post-container input,
-            .create-post-container textarea {
-                font-size: 1rem;
-            }
-            
-            .input-label {
-                font-size: 1.2rem;
-            }
-        }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .general-button {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .create-post-container {
+        padding: 10px;
+    }
+
+    .create-post-container form {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .create-post-container input,
+    .create-post-container textarea {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .input-label {
+        font-size: 1.2rem;
+    }
+
+    .post-container {
+        margin: 20px auto;
+        padding: 0 10px;
+    }
+
+    .post {
+        padding: 15px;
+    }
+
+    .post h2 {
+        font-size: 1.2rem;
+    }
+
+    .post p {
+        font-size: 0.95rem;
+    }
+
+    .sign-up-container,
+    .login-page-form {
+        width: 100%;
+        max-width: 90%;
+        padding: 1.5rem;
+    }
+
+    .sign-up-container input[type="submit"],
+    .login-page-form input[type="submit"] {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .general-button {
+        font-size: 0.9rem;
+        padding: 8px 14px;
+    }
+
+    .input-label {
+        font-size: 1rem;
+    }
+
+    .create-post-container button {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+    }
+
+    .post h2 {
+        font-size: 1rem;
+    }
+
+    .post p {
+        font-size: 0.9rem;
+    }
+}
+
+
+        
