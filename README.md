@@ -77,4 +77,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/dbn
 ```
 python app.py
 ```
-Then visit http://127.0.0.1:5000 in your browser.
+Then visit http://127.0.0.1:7777 in your browser.
